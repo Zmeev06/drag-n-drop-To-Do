@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react"
-import { useAppSelector } from "../hooks/redux"
-import { selectPaginate } from "../store/slices/paginateSlice"
-import { IProject } from "../interfaces/serviceInterfaces"
-import { Content } from "../components/UI/Content"
-import { ProjectsTopBlock } from "../components/ProjectsPageComp/TopBlock"
-import { RecentlyBlock } from "../components/ProjectsPageComp/RecentlyBlock"
-import { ProjectsBlock } from "../components/ProjectsPageComp/ProjectsBlock"
-import { Paginate } from "../components/ProjectsPageComp/Paginate"
-
+import { useEffect, useState } from 'react'
+import { useAppSelector } from '../hooks/redux'
+import { selectPaginate } from '../store/slices/paginateSlice'
+import { IProject } from '../interfaces/serviceInterfaces'
+import { Content } from '../components/UI/Content'
+import { ProjectsTopBlock } from '../components/ProjectsPageComp/TopBlock'
+import { RecentlyBlock } from '../components/ProjectsPageComp/RecentlyBlock'
+import { ProjectsBlock } from '../components/ProjectsPageComp/ProjectsBlock'
+import { Paginate } from '../components/ProjectsPageComp/Paginate'
+import { Helmet } from 'react-helmet'
 
 export const ProjectsPage = () => {
   const projects = useAppSelector((state) => state.projects.value)
@@ -27,6 +27,9 @@ export const ProjectsPage = () => {
 
   return (
     <Content maxW="lg" pt={10} pb={10}>
+      <Helmet>
+        <title>Ваши проекты</title>
+      </Helmet>
       <ProjectsTopBlock />
       <RecentlyBlock />
       <ProjectsBlock projects={paginateProjects} />
