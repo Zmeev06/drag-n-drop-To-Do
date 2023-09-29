@@ -1,0 +1,46 @@
+@import '../../../styles/colors.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.item {
+  padding: 10px;
+  border: 1px solid $light-blue;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+  &:hover {
+    background-color: $grey;
+  }
+}
+
+.active {
+  background-color: $light-blue;
+  &:hover {
+    background-color: $light-blue;
+  }
+}
+
+.arrow {
+  width: 30px;
+  height: 40px;
+  * {
+    transition: 0.3s;
+    fill: $light-blue;
+  }
+  &:hover {
+    path {
+      fill: $blue;
+    }
+  }
+  &Left {
+    transform: scale(-1);
+  }
+}

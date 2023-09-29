@@ -1,0 +1,52 @@
+@import '../../../styles/colors.scss';
+
+.root {
+  display: inline-block;
+}
+
+.content {
+  border: 1px $grey-blue solid;
+  width: 250px;
+  height: 150px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+
+  &:hover {
+    background-color: $light-blue;
+  }
+  &:hover {
+    .btns {
+      opacity: 1;
+    }
+  }
+}
+
+.btns {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  top: 10px;
+  right: 10px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.iconBtn {
+  width: 30px;
+  height: 30px;
+  background-color: $grey;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.2);
+  }
+}

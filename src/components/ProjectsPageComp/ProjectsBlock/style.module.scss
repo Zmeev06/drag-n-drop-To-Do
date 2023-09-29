@@ -1,0 +1,54 @@
+@import '../../../styles/colors.scss';
+
+.root {
+  height: 370px;
+  padding: 0 20px;
+  margin-top: 20px;
+}
+
+.content {
+  display: flex;
+  gap: 37px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  height: fit-content;
+}
+
+.emptyBlock {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 600px;
+  position: relative;
+}
+
+.arrow {
+  & * {
+    fill: $light-blue;
+  }
+  position: absolute;
+  transform: rotate(25deg) scale(1);
+  right: -605px;
+  top: -45px;
+  animation: arrowAnim 2s ease-in-out infinite;
+}
+
+@keyframes arrowAnim {
+  0% {
+    top: -45px;
+    right: 25px;
+    transform: rotate(25deg) scale(1);
+  }
+  50% {
+    top: -35px;
+    right: 40px;
+    transform: rotate(20deg) scale(1);
+  }
+  100% {
+    top: -45px;
+    right: 25px;
+    transform: rotate(25deg) scale(1);
+  }
+}

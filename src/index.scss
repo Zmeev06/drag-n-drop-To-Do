@@ -1,0 +1,10 @@
+@import './styles/normalize.scss';
+
+@font-face {
+  font-family: Raleway;
+  src: url('./assets/fonts/Raleway.ttf');
+}
+
+* {
+  font-family: Raleway;
+}
