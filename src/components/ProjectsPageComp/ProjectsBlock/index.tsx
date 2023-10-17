@@ -1,4 +1,4 @@
-import { IProject } from '../../../interfaces/serviceInterfaces'
+import { IProject } from '../../../interfaces/variableInterfaces'
 import { Heading } from '../../UI/Heading'
 import { ProjectBtn } from '../ProjectBtn'
 import styles from './style.module.scss'

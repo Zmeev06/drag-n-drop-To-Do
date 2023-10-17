@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { useAppDispatch } from '../../../hooks/redux'
 import { Heading } from '../../UI/Heading'
 import { deleteProject } from '../../../store/slices/projectsSlice'
-import { IProject } from '../../../interfaces/serviceInterfaces'
+import { IProject } from '../../../interfaces/variableInterfaces'
 import { Modal } from '../../UI/Modal'
 
 interface ProjectBtnProps {
@@ -22,7 +22,9 @@ export const ProjectBtn = ({ project }: ProjectBtnProps) => {
       <div
         className={styles.root}
         onClick={() => {
-          navigate(`/project/${project.id}`)
+          navigate(`/project/${project.id}`, {
+            state: { title: project.title, id: project.id },
+          })
         }}
       >
         <div className={styles.content}>

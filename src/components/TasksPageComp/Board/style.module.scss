@@ -1,0 +1,21 @@
+@import '../../../styles/colors.scss';
+
+.root {
+  border: 2px solid $light-blue;
+  border-radius: 15px;
+  width: 30%;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+}

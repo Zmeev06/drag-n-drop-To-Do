@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { IProject } from '../../interfaces/serviceInterfaces'
+import { IProject } from '../../interfaces/variableInterfaces'
 import { RootState } from '..'
 
 interface DataState {

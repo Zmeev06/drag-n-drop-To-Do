@@ -2,7 +2,7 @@ import { ReactComponent as Arrow } from '../../../assets/img/icons/arrow.svg'
 import { useEffect, useState } from 'react'
 import styles from './style.module.scss'
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux'
-import { IProject } from '../../../interfaces/serviceInterfaces'
+import { IProject } from '../../../interfaces/variableInterfaces'
 import {
   next,
   prev,

@@ -4,6 +4,7 @@ import { Heading } from '../Heading'
 import styles from './style.module.scss'
 import { useAppDispatch } from '../../../hooks/redux'
 import { addProject, editProject } from '../../../store/slices/projectsSlice'
+import { addTask, editTask } from '../../../store/slices/tasksSlice'
 
 interface ModalProps {
   type: 'edit' | 'create'
@@ -11,6 +12,7 @@ interface ModalProps {
   setIsOpen: (isOpen: boolean) => void
   id?: number
   title?: string
+  projectId?: number
 }
 
 export const Modal = ({
@@ -19,6 +21,7 @@ export const Modal = ({
   setIsOpen,
   id = 0,
   title,
+  projectId = 0,
 }: ModalProps) => {
   const [value, setValue] = useState(title || '')
   const [isEmpty, setIsEmpty] = useState(false)
@@ -28,13 +31,29 @@ export const Modal = ({
       setIsEmpty(true)
     } else {
       if (type === 'create' && forWhat === 'project') {
-        const project = {
-          id: Date.now(),
-          title: value,
-        }
-        dispath(addProject(project))
+        dispath(addProject({ id: Date.now(), title: value }))
       } else if (type === 'edit' && forWhat === 'project') {
         dispath(editProject({ id, title: value }))
+      } else if (type === 'edit' && forWhat === 'project') {
+        dispath(editProject({ id, title: value }))
+      } else if (type === 'create' && forWhat === 'task') {
+        dispath(
+          addTask({
+            id: Date.now(),
+            title: value,
+            projectId: projectId,
+            status: 'Queue',
+          }),
+        )
+      } else if (type === 'edit' && forWhat === 'task') {
+        dispath(
+          editTask({
+            id: id,
+            title: value,
+            projectId: projectId,
+            status: 'Queue',
+          }),
+        )
       }
       setValue('')
       setIsOpen(false)
